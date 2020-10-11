@@ -295,7 +295,8 @@ class PylintFile(pytest.File):
         """Create a PyLintItem for the File."""
         yield PyLintItem.from_parent(
             parent=self,
-            name='{}::PYLINT'.format(self.fspath)
+            name=self.name,
+            nodeid='{}::PYLINT'.format(self.nodeid)
         )
 
 
